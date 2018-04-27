@@ -1,0 +1,31 @@
+//- Все примеси в этом файле должны начинаться c имени блока (card)
+
+mixin card(heading, smallHeading, desc, weight, weightUnits, topText, topTextHover, bottomText, bottomTextSelected, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card--' + modsList[i].trim();
+      }
+    }
+
+  article.card(class=allMods)&attributes(attributes)
+    .card__inner
+      p.card__top-text.card__top-text--default!= topText
+      p.card__top-text.card__top-text--hover(hidden)!= topTextHover
+      h2.card__heading= heading
+      if (smallHeading !== '')
+        h3.card__small-heading= smallHeading
+      if (desc.length !== 0)
+        ul.card__desc
+          each item in desc
+            li.card__desc-item!= item
+      if (weight !== '' && weightItems !== '')
+        .card__weight
+          p.card__weight-digit= weight
+          p.card__weight-items= weightUnits
+    p.card__bottom-text!= bottomText
+    p.card__bottom-text(hidden)!= bottomTextSelected

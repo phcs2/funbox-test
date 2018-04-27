@@ -3,7 +3,9 @@
     "page": [],
     "typo": [],
     "page-header": [],
-    "page-footer": []
+    "page-footer": [],
+    "products": [],
+    "card": []
   },
   "addCssBefore": [
     "./src/scss/functions.scss",
