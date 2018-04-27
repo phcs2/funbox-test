@@ -1,0 +1,29 @@
+{
+  "blocks": {
+    "page": [],
+    "typo": [],
+    "page-header": [],
+    "page-footer": []
+  },
+  "addCssBefore": [
+    "./src/scss/functions.scss",
+    "./src/scss/variables.scss",
+    "./src/scss/mixins.scss"
+  ],
+  "addCssAfter": [
+    "./src/scss/print.scss"
+  ],
+  "singleCompiled": [],
+  "addJsBefore": [],
+  "addJsAfter": [],
+  "addImages": [
+    "./src/img/*.{jpg,jpeg,gif,png,svg,ico}"
+  ],
+  "copiedCss": [],
+  "copiedJs": [],
+  "dirs": {
+    "srcPath": "./src/",
+    "buildPath": "./build/",
+    "blocksDirName": "blocks"
+  }
+}
