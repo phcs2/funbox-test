@@ -1,26 +1,28 @@
-html {
-  //background: url(../img/default.png) no-repeat 50% 0;
-}
-
-body {
-  //opacity: 0.5;
-}
-
 .products {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 1200px;
+  width: 320px;
+
+  @media(min-width: $screen-md) {
+    width: 800px;
+  }
+
+  @media(min-width: $screen-lg) {
+    width: 1200px;
+  }
 
   &__heading {
-    flex-basis: 100%;
+    width: 100%;
+    margin-top: 15px;
     margin-bottom: 23px;
     text-align: center;
   }
 
   &__cards-wrapper {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
   }
 }
