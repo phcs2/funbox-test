@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^1.0.0",
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^8.4.1",
     "browser-sync": "^2.18.8",
     "const": "^1.0.0",
     "cross-env": "^5.0.0",
@@ -73,5 +73,7 @@
     "stylelint": "^9.1.1",
     "vinyl-buffer": "^1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "svg4everybody": "^2.1.8"
+  }
 }
