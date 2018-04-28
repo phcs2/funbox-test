@@ -11,10 +11,10 @@ mixin card(state, img, heading, smallHeading, desc, weight, weightUnits, topText
       }
     }
 
-  article.card(class=allMods state=state)&attributes(attributes)
+  article.card.hoverable(class=allMods state=state)&attributes(attributes)
     .card__inner
-      p.card__top-text.card__top-text--default!= topText
-      p.card__top-text.card__top-text--hover(hidden)!= topTextHover
+      p.card__top-text= topText
+      p.card__top-text= topTextHover
       h2.card__heading= heading
       if (smallHeading !== '')
         h3.card__small-heading= smallHeading
@@ -30,10 +30,11 @@ mixin card(state, img, heading, smallHeading, desc, weight, weightUnits, topText
         img.card__img(src='img/' + img)
     if (state === 'enabled')
       p.card__bottom-text!= bottomText
-      p.card__bottom-text(hidden)!= bottomTextSelected
+      p.card__bottom-text(hidden)= bottomTextSelected
     else if (state === 'selected')
       p.card__bottom-text(hidden)!= bottomText
-      p.card__bottom-text!= bottomTextSelected
+      p.card__bottom-text= bottomTextSelected
     else
       p.card__bottom-text= 'Печалька, ' + smallHeading + ' закончился'
-    img.card__bgr(width='320' height='480' src='img/card-bg.svg')
+    svg.card__bgr(width='320' height='480')
+        use(xlink:href='img/sprite.svg#cardbg')

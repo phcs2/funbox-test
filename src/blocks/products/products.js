@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', function(){
           var cardInner = card.firstElementChild;
         }
       }
-      if (cardInner.contains(t) || t.tagName === 'I') toggleState(cardInner, card);
+      if (cardInner.contains(t)) toggleState(cardInner, card, true);
+      if (t.tagName === 'I') toggleState(cardInner, card);
     }
 
-    function toggleState(cardInner, card) {
+    function toggleState(cardInner, card, removeHoverable) {
       var state = card.getAttribute('state');
       if (state === 'disabled') return;
       var bottomText = card.querySelectorAll('.card__bottom-text');
@@ -29,8 +30,10 @@ document.addEventListener('DOMContentLoaded', function(){
         bottomText[0].removeAttribute('hidden');
         bottomText[1].setAttribute('hidden', 'hidden');
       }
-      card.classList.remove('hoverable');
-      cardInner.addEventListener('mouseleave', addClassHoverable);
+      if (removeHoverable === true) {
+        card.classList.remove('hoverable');
+        cardInner.addEventListener('mouseleave', addClassHoverable);
+      } 
     }
 
     function addClassHoverable(e) {

@@ -12,12 +12,30 @@
     position: relative;
     padding: 20px 16px 0 48px;
     height: 480px;
+    cursor: pointer;
   }
 
   &__top-text {
     margin: 0;
     font-size: 16px;
     color: $gray;
+
+    .card[state='disabled'] & {
+      color: $color-disabled;
+    }
+
+    &:last-of-type {
+      display: none;
+      color: $color-selected-lighter;
+    }
+
+    .hoverable[state='selected'] .card__inner:hover &:first-of-type {
+      display: none;
+    }
+
+    .hoverable[state='selected'] .card__inner:hover &:last-of-type {
+      display: block;
+    }
   }
 
   &__heading {
@@ -27,6 +45,10 @@
     font-size: 48px;
     line-height: 1;
     color: $black;
+
+    .card[state='disabled'] & {
+      color: $color-disabled;
+    }
   }
 
   &__small-heading {
@@ -34,6 +56,10 @@
     margin-bottom: 0;
     font-size: 24px;
     color: $black;
+
+    .card[state='disabled'] & {
+      color: $color-disabled;
+    }
   }
 
   &__desc {
@@ -45,6 +71,10 @@
   &__desc-item {
     font-size: 14px;
     color: $gray;
+
+    .card[state='disabled'] & {
+      color: $color-disabled;
+    }
   }
 
   &__weight {
@@ -61,6 +91,22 @@
     height: 81px;
     background-color: $color-main;
     border-radius: 50%;
+
+    .card[state='disabled'] & {
+      background-color: $color-disabled;
+    }
+
+    .hoverable[state='enabled'] .card__inner:hover & {
+      background-color: $color-main-lighter;
+    }
+
+    .card[state='selected'] & {
+      background-color: $color-selected;
+    }
+
+    .hoverable[state='selected'] .card__inner:hover & {
+      background-color: $color-selected-lighter;
+    }
   }
 
   &__weight-digits {
@@ -81,12 +127,20 @@
     left: 4px;
     bottom: 4px;
     border-bottom-left-radius: 6px;
+
+    .card[state='disabled'] & {
+     opacity: 0.5;
+    }
   }
 
   &__bottom-text {
     margin: 14px 0;
     font-size: 13px;
     text-align: center;
+
+    .card[state='disabled'] & {
+      color: $color-warning;
+    }
 
     span {
       color: $color-main;
@@ -96,6 +150,10 @@
       font-style: normal;
       border-bottom: 1px dashed $color-main;
       cursor: pointer;
+
+      &:hover {
+        color: $color-main-lighter;
+      }
     }
   }
 
@@ -103,5 +161,24 @@
     position: absolute;
     top: 0;
     z-index: -2;
+    stroke: $color-main;
+    stroke-width: 4;
+    fill: $lightest-gray;
+
+    .card[state='disabled'] & {
+      stroke: $color-disabled;
+    }
+
+    .hoverable[state='enabled'] .card__inner:hover ~ & {
+      stroke: $color-main-lighter;
+    }
+
+    .card[state='selected'] & {
+      stroke: $color-selected;
+    }
+
+    .hoverable[state='selected'] .card__inner:hover ~ & {
+      stroke: $color-selected-lighter;
+    }
   }
 }
