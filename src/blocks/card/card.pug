@@ -28,9 +28,12 @@ mixin card(state, img, heading, smallHeading, desc, weight, weightUnits, topText
           p.card__weight-units= weightUnits
       if (img !== '')
         img.card__img(src='img/' + img)
-    if (state !== 'disabled')
+    if (state === 'enabled')
       p.card__bottom-text!= bottomText
       p.card__bottom-text(hidden)!= bottomTextSelected
+    else if (state === 'selected')
+      p.card__bottom-text(hidden)!= bottomText
+      p.card__bottom-text!= bottomTextSelected
     else
       p.card__bottom-text= 'Печалька, ' + smallHeading + ' закончился'
     img.card__bgr(width='320' height='480' src='img/card-bg.svg')
