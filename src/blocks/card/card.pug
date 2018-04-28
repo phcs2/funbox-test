@@ -1,7 +1,6 @@
-//- Все примеси в этом файле должны начинаться c имени блока (card)
+mixin card(state, img, heading, smallHeading, desc, weight, weightUnits, topText, topTextHover, bottomText, bottomTextSelected, mods)
 
-mixin card(img, heading, smallHeading, desc, weight, weightUnits, topText, topTextHover, bottomText, bottomTextSelected, mods)
-
+  //- state{string} - возможные значения: enabled, selected, disabled
   -
     // список модификаторов
     var allMods = '';
@@ -12,7 +11,7 @@ mixin card(img, heading, smallHeading, desc, weight, weightUnits, topText, topTe
       }
     }
 
-  article.card(class=allMods)&attributes(attributes)
+  article.card(class=allMods state=state)&attributes(attributes)
     .card__inner
       p.card__top-text.card__top-text--default!= topText
       p.card__top-text.card__top-text--hover(hidden)!= topTextHover
@@ -29,6 +28,9 @@ mixin card(img, heading, smallHeading, desc, weight, weightUnits, topText, topTe
           p.card__weight-units= weightUnits
       if (img !== '')
         img.card__img(src='img/' + img)
-    p.card__bottom-text!= bottomText
-    p.card__bottom-text(hidden)!= bottomTextSelected
+    if (state !== 'disabled')
+      p.card__bottom-text!= bottomText
+      p.card__bottom-text(hidden)!= bottomTextSelected
+    else
+      p.card__bottom-text= 'Печалька, ' + smallHeading + ' закончился'
     img.card__bgr(width='320' height='480' src='img/card-bg.svg')

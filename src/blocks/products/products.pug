@@ -16,6 +16,7 @@ mixin products(mods)
     h1.products__heading Ты сегодня покормил кота?
     .products__cards-wrapper
       +card(
+        'enabled',
         'cat.jpg',
         'Нямушка',
         'с фуа-гра',
@@ -31,6 +32,7 @@ mixin products(mods)
         'Печень утки разварная с артишоками.'
       )
       +card(
+        'selected',
         'cat.jpg',
         'Нямушка',
         'с рыбой',
@@ -46,6 +48,7 @@ mixin products(mods)
         'Головы щучьи с чесноком да свежайшая сёмгушка.'
       )
       +card(
+        'disabled',
         'cat.jpg',
         'Нямушка',
         'с курой',
