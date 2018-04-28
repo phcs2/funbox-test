@@ -10,6 +10,13 @@
   box-sizing: inherit;
 }
 
+body {
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1)),
+    url(../img/bg.png);
+  background-size: auto, 70px auto;
+}
+
 a,
 button,
 [role='button'],
