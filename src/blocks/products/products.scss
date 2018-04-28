@@ -1,8 +1,27 @@
-// В этом файле должны быть стили для БЭМ-блока products, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+html {
+  //background: url(../img/default.png) no-repeat 50% 0;
+}
+
+body {
+  //opacity: 0.5;
+}
 
 .products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1200px;
 
-  $block-name:                &; // #{$block-name}__element
+  &__heading {
+    flex-basis: 100%;
+    margin-bottom: 23px;
+    text-align: center;
+  }
+
+  &__cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
+

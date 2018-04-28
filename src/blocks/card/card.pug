@@ -25,7 +25,8 @@ mixin card(heading, smallHeading, desc, weight, weightUnits, topText, topTextHov
             li.card__desc-item!= item
       if (weight !== '' && weightItems !== '')
         .card__weight
-          p.card__weight-digit= weight
-          p.card__weight-items= weightUnits
+          p.card__weight-digits= weight
+          p.card__weight-units= weightUnits
     p.card__bottom-text!= bottomText
     p.card__bottom-text(hidden)!= bottomTextSelected
+    img.card__bgr(width='320' height='480' src='img/card-bg.svg')

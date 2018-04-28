@@ -1,8 +1,95 @@
-// В этом файле должны быть стили для БЭМ-блока card, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .card {
+  position: relative;
+  width: 320px;
+  //height: 480px;
+  margin-left: 40px;
+  margin-right: 40px;
 
-  $block-name:                &; // #{$block-name}__element
+  &__inner {
+    position: relative;
+    padding: 20px 16px 0 48px;
+    height: 480px;
+  }
+
+  &__top-text {
+    margin: 0;
+    font-size: 16px;
+    color: $gray;
+  }
+
+  &__heading {
+    margin-top: 10px;
+    margin-left: -2px;
+    margin-bottom: 0;
+    font-size: 48px;
+    line-height: 1;
+    color: $black;
+  }
+
+  &__small-heading {
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-size: 24px;
+    color: $black;
+  }
+
+  &__desc {
+    margin: 15px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__desc-item {
+    font-size: 14px;
+    color: $gray;
+  }
+
+  &__weight {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6px;
+    width: 81px;
+    height: 81px;
+    background-color: $color-main;
+    border-radius: 50%;
+  }
+
+  &__weight-digits {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  &__weight-units {
+    margin: -2px 0 0;
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  &__bottom-text {
+    margin: 14px 0;
+    font-size: 13px;
+    text-align: center;
+
+    span {
+      color: $color-main;
+    }
+
+    i {
+      font-style: normal;
+      border-bottom: 1px dashed $color-main;
+      cursor: pointer;
+    }
+  }
+
+  &__bgr {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
 }
