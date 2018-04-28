@@ -1,6 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (card)
 
-mixin card(heading, smallHeading, desc, weight, weightUnits, topText, topTextHover, bottomText, bottomTextSelected, mods)
+mixin card(img, heading, smallHeading, desc, weight, weightUnits, topText, topTextHover, bottomText, bottomTextSelected, mods)
 
   -
     // список модификаторов
@@ -27,6 +27,8 @@ mixin card(heading, smallHeading, desc, weight, weightUnits, topText, topTextHov
         .card__weight
           p.card__weight-digits= weight
           p.card__weight-units= weightUnits
+      if (img !== '')
+        img.card__img(src='img/' + img)
     p.card__bottom-text!= bottomText
     p.card__bottom-text(hidden)!= bottomTextSelected
     img.card__bgr(width='320' height='480' src='img/card-bg.svg')
