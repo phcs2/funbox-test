@@ -3,7 +3,7 @@
   width: 320px;
   margin-bottom: 15px;
 
-  @media(min-width: $screen-md) {
+  @media (min-width: $screen-md) {
     margin-left: 40px;
     margin-right: 40px;
   }
@@ -129,7 +129,7 @@
     border-bottom-left-radius: 8px;
 
     .card[state='disabled'] & {
-     opacity: 0.5;
+      opacity: 0.5;
     }
   }
 

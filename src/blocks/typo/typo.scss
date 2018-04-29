@@ -1,16 +1,17 @@
 // Этот блок ответственен ТОЛЬКО за типографику проекта.
 // Не пишите тут какую-либо стороннюю стилизацию.
 
-$font-family:                 "Trebuchet MS", Helvetica, serif;
-$font-family-header:          "Exo2-Thin", Helvetica, serif;
+$font-family:                 'Trebuchet MS', Helvetica, serif;
+$font-family-header:          'Exo2-Thin', Helvetica, serif;
 $font-size:                   14px !default;
 $line-height:                 1.2 !default;
 $text-color:                  #ffffff !default;
 
 @font-face {
-  font-family: "Exo2-Thin";
-  src: url("../fonts/Exo2-Thin.woff2") format("woff2"),
-       url("../fonts/Exo2-Thin.woff") format("woff");
+  font-family: 'Exo2-Thin';
+  src:
+    url('../fonts/Exo2-Thin.woff2') format('woff2'),
+    url('../fonts/Exo2-Thin.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
