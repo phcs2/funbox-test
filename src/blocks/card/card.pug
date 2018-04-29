@@ -1,4 +1,4 @@
-mixin card(state, img, heading, smallHeading, desc, weight, weightUnits, topText, topTextHover, bottomText, bottomTextSelected, mods)
+mixin card(state, img, imgRetina, heading, smallHeading, desc, weight, weightUnits, topText, topTextHover, bottomText, bottomTextSelected, mods)
 
   //- state{string} - возможные значения: enabled, selected, disabled
   -
@@ -27,7 +27,10 @@ mixin card(state, img, heading, smallHeading, desc, weight, weightUnits, topText
           p.card__weight-digits= weight
           p.card__weight-units= weightUnits
       if (img !== '')
-        img.card__img(src='img/' + img)
+        if (imgRetina != '')
+          img.card__img(src='img/' + img srcset='img/' + img + ' 1x, img/' + imgRetina + ' 2x' alt="Фото котика")
+        else
+          img.card__img(src='img/' + img)
     if (state === 'enabled')
       p.card__bottom-text!= bottomText
       p.card__bottom-text(hidden)= bottomTextSelected
