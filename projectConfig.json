@@ -6,7 +6,8 @@
     "page-footer": [],
     "products": [],
     "card": [],
-    "sprite-svg": []
+    "sprite-svg": [],
+    "is-mobile": []
   },
   "addCssBefore": [
     "./src/scss/functions.scss",

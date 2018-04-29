@@ -29,11 +29,11 @@
       color: $color-selected-lighter;
     }
 
-    .hoverable[state='selected'] .card__inner:hover &:first-of-type {
+    body.no-mobile .hoverable[state='selected'] .card__inner:hover &:first-of-type {
       display: none;
     }
 
-    .hoverable[state='selected'] .card__inner:hover &:last-of-type {
+    body.no-mobile .hoverable[state='selected'] .card__inner:hover &:last-of-type {
       display: block;
     }
   }
@@ -96,7 +96,7 @@
       background-color: $color-disabled;
     }
 
-    .hoverable[state='enabled'] .card__inner:hover & {
+    body.no-mobile .hoverable[state='enabled'] .card__inner:hover & {
       background-color: $color-main-lighter;
     }
 
@@ -104,7 +104,7 @@
       background-color: $color-selected;
     }
 
-    .hoverable[state='selected'] .card__inner:hover & {
+    body.no-mobile .hoverable[state='selected'] .card__inner:hover & {
       background-color: $color-selected-lighter;
     }
   }
@@ -151,7 +151,7 @@
       border-bottom: 1px dashed $color-main;
       cursor: pointer;
 
-      &:hover {
+      body.no-mobile &:hover {
         color: $color-main-lighter;
       }
     }
@@ -169,7 +169,7 @@
       stroke: $color-disabled;
     }
 
-    .hoverable[state='enabled'] .card__inner:hover ~ & {
+    body.no-mobile .hoverable[state='enabled'] .card__inner:hover ~ & {
       stroke: $color-main-lighter;
     }
 
@@ -177,7 +177,7 @@
       stroke: $color-selected;
     }
 
-    .hoverable[state='selected'] .card__inner:hover ~ & {
+    body.no-mobile .hoverable[state='selected'] .card__inner:hover ~ & {
       stroke: $color-selected-lighter;
     }
   }

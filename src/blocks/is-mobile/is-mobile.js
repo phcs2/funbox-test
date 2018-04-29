@@ -1,0 +1,1 @@
+if(/Android|iPhone|iPad|iPod|(CriOS|Chrome)(?=.*\bMobile\b)|(?=.*\bFirefox\b)(?=.*\bMobile\b)|Windows Phone|(?=.*\bWindows\b)(?=.*\bARM\b)|BlackBerry|BB10|Opera Mini/i.test(navigator.userAgent)){document.body.classList.remove('no-mobile')};
