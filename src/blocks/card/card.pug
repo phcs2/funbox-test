@@ -40,4 +40,11 @@ mixin card(state, img, imgRetina, heading, smallHeading, desc, weight, weightUni
     else
       p.card__bottom-text= 'Печалька, ' + smallHeading + ' закончился'
     svg.card__bgr(width='320' height='480')
-        use(xlink:href='img/sprite.svg#cardbg')
+        use(xlink:href='#cardbg')
+
+
+mixin card-svg()
+  svg.card-svg(width='0' height='0')
+    defs
+      symbol(id="cardbg" viewBox="0 0 320 480")
+        path(d="M2,43.5046174 L2,468 C2,473.522847 6.4771525,478 12,478 L308,478 C313.522847,478 318,473.522847 318,468 L318,12 C318,6.4771525 313.522847,2 308.001698,1.99999928 L43.2799237,2.2246937 L2,43.5046174 Z")

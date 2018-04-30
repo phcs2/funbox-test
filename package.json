@@ -73,7 +73,5 @@
     "stylelint": "^9.1.1",
     "vinyl-buffer": "^1.0.0"
   },
-  "dependencies": {
-    "svg4everybody": "^2.1.8"
-  }
+  "dependencies": {}
 }
